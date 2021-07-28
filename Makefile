@@ -6,7 +6,7 @@
 #    By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/26 10:27:53 by JEAN-SEBA         #+#    #+#              #
-#    Updated: 2021/07/21 16:57:40 by JEAN-SEBA        ###   ########.fr        #
+#    Updated: 2021/07/28 15:36:05 by JEAN-SEBA        ###   ########.fr        #
 #    Updated: 2021/07/08 14:00:04 by JEAN-SEBA        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -47,6 +47,7 @@ FILES	= ft_memset.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
+			ft_striteri.c
 
 OBJS = $(FILES:.c=.o)
 
@@ -64,7 +65,7 @@ BONUSF = ft_islower.c \
 		   		
 OBJSB = $(BONUSF:.c=.o)
 
-all: bonus $(NAME)
+all: bonus $(NAME) clean
 
 $(NAME): $(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) *.o

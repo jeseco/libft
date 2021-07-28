@@ -6,7 +6,7 @@
 /*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 12:15:01 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/07/21 16:59:06 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2021/07/28 15:31:05 by JEAN-SEBA        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,17 @@ static size_t	ft_get_nu_strs(char const *s, char c)
 	nbr_strs = 0;
 	while (s[i] && s[i] == c)
 		i++;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
 			nbr_strs++;
-			while (s[i] && s[i] == c)
+			while (s[i] && s[i] == c && s[i] != '\0')
 				i++;
 			continue ;
 		}
-		i++;
+		if (s[i + 1] != '\0')
+			i++;
 	}
 	if (s[i - 1] != c)
 		nbr_strs++;

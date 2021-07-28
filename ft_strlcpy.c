@@ -6,7 +6,7 @@
 /*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 10:08:40 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/07/08 14:36:43 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2021/07/24 21:19:15 by JEAN-SEBA        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char	*dest, const char *src, size_t dest_size)
 	src_len = ft_strlen(src);
 	if (!dest_size)
 		return (src_len);
-	while (src[i] != '\0' && i < dest_size)
+	while (src[i] != '\0' && i < dest_size - 1)
 	{
 		dest[i] = src[i];
 		i++;

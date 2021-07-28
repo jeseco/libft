@@ -6,7 +6,7 @@
 /*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 11:25:46 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/05/28 10:53:17 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2021/07/24 21:49:47 by JEAN-SEBA        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	c1;
 	unsigned char	c2;
 
+	if (n == 0)
+		return (0);
 	while (n > 0)
 	{
 		c1 = (unsigned char) *s1++;

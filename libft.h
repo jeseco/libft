@@ -6,7 +6,7 @@
 /*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 10:29:20 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/07/21 17:13:24 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2021/07/24 22:24:22 by JEAN-SEBA        ###   ########.fr       */
 /*   Updated: 2021/07/08 13:59:01 by JEAN-SEBA        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -114,4 +114,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 #endif
