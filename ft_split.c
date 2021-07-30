@@ -6,52 +6,37 @@
 /*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 12:15:01 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/07/28 15:31:05 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2021/07/30 16:33:28 by JEAN-SEBA        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**ft_malloc_error(char **tab)
+static unsigned int	ft_get_nb_strs(char const *s, char c)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free (tab);
-	return (NULL);
-}
-
-static size_t	ft_get_nu_strs(char const *s, char c)
-{
-	unsigned int	nbr_strs;
 	unsigned int	i;
+	unsigned int	nb_strs;
 
 	if (!s[0])
 		return (0);
 	i = 0;
-	nbr_strs = 0;
+	nb_strs = 0;
 	while (s[i] && s[i] == c)
 		i++;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] == c)
 		{
-			nbr_strs++;
-			while (s[i] && s[i] == c && s[i] != '\0')
+			nb_strs++;
+			while (s[i] && s[i] == c)
 				i++;
 			continue ;
 		}
-		if (s[i + 1] != '\0')
-			i++;
+		i++;
 	}
 	if (s[i - 1] != c)
-		nbr_strs++;
-	return (nbr_strs);
+		nb_strs++;
+	return (nb_strs);
 }
 
 static void	ft_get_next_str(char **next_str, unsigned int *next_str_len, char c)
@@ -65,11 +50,6 @@ static void	ft_get_next_str(char **next_str, unsigned int *next_str_len, char c)
 		(*next_str)++;
 	while ((*next_str)[i])
 	{
-		if ((*next_str)[i] == c && (*next_str)[i + 1] == '\0')
-		{
-			next_str_len--;
-			return ;
-		}
 		if ((*next_str)[i] == c)
 			return ;
 		(*next_str_len)++;
@@ -79,29 +59,28 @@ static void	ft_get_next_str(char **next_str, unsigned int *next_str_len, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char			**rtn_tab;
+	char			**tab;
 	char			*next_str;
 	unsigned int	next_str_len;
-	unsigned int	nbr_strs;
+	unsigned int	nb_strs;
 	unsigned int	i;
 
 	if (!s)
 		return (NULL);
-	nbr_strs = ft_get_nu_strs(s, c);
-	rtn_tab = (char **)malloc(sizeof(char *) * (nbr_strs + 1));
-	if (!rtn_tab)
+	nb_strs = ft_get_nb_strs(s, c);
+	tab = (char **)malloc(sizeof(char *) * (nb_strs + 1));
+	if (!tab)
 		return (NULL);
 	i = 0;
 	next_str = (char *)s;
 	next_str_len = 0;
-	while (i < nbr_strs)
+	while (i < nb_strs)
 	{
 		ft_get_next_str(&next_str, &next_str_len, c);
-		rtn_tab[i] = (char *)malloc(sizeof(char) * (next_str_len));
-		if (!rtn_tab)
-			return (ft_malloc_error(rtn_tab));
-		ft_strlcpy(rtn_tab[i++], ft_strtrim(next_str, &c), next_str_len + 1);
+		tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1));
+		ft_strlcpy(tab[i], next_str, next_str_len + 1);
+		i++;
 	}
-	rtn_tab[i] = NULL;
-	return (rtn_tab);
+	tab[i] = NULL;
+	return (tab);
 }
