@@ -6,7 +6,7 @@
 #    By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/26 10:27:53 by JEAN-SEBA         #+#    #+#              #
-#    Updated: 2021/07/30 15:03:32 by JEAN-SEBA        ###   ########.fr        #
+#    Updated: 2021/08/02 11:46:32 by JEAN-SEBA        ###   ########.fr        #
 #    Updated: 2021/07/08 14:00:04 by JEAN-SEBA        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -62,12 +62,18 @@ BONUSF = ft_islower.c \
 			  ft_lstclear.c \
 			  ft_lstiter.c \
 			  ft_lstmap.c 
-		   		
+
+PERSONAL_FUNC = personal_function/ft_intversion.c \
+				personal_function/ft_itohex.c \
+				personal_funciton/ft_putptr.c \
+
 OBJSB = $(BONUSF:.c=.o)
+
+OBJSP = $(PERSONAL_FUNC:.c=.o)
 
 all: bonus $(NAME) clean
 
-$(NAME): $(OBJS) $(BONUS_OBJS)
+$(NAME): $(OBJS) $(BONUS_OBJS) $(OBJSP) 
 	ar rcs $(NAME) *.o
 
 clean:
@@ -81,3 +87,5 @@ re: fclean all
 bonus: $(OBJSB) 
 
 $(OBJSB):
+
+$(OBJSP):
