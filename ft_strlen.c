@@ -6,7 +6,7 @@
 /*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 12:01:27 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/05/26 12:09:05 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2022/01/25 15:21:25 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ size_t	ft_strlen(const char *s)
 	int		len;
 
 	len = 0;
-	while (*s++)
-		len++;
+	if (s)
+		while (*s++)
+			len++;
 	return (len);
 }
