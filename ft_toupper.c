@@ -14,9 +14,6 @@
 
 int	ft_toupper(int c)
 {
-	unsigned char	k;
-
-	k = (unsigned char) c;
 	if (c > 96 && c < 123)
 		return (c = c - 32);
 	return (c);

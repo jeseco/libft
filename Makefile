@@ -62,19 +62,6 @@ FILES		= 	ft_memset.c \
 				get_next_line.c \
 				get_next_line_utils.c
 
-LIBFTPRINTF =	libftprintf/srcs/ft_check_flag.c \
-				libftprintf/srcs/ft_printf.c \
-				libftprintf/srcs/ft_put_h.c \
-				libftprintf/srcs/ft_put_p.c \
-				libftprintf/srcs/ft_put_s.c \
-				libftprintf/srcs/ft_putnbr.c \
-				libftprintf/srcs/ft_intlen.c \
-				libftprintf/srcs/ft_put_i.c \
-				libftprintf/srcs/ft_put_percent.c \
-				libftprintf/srcs/ft_put_u.c 
-
-
-
 PERSONAL_FUNC = personal_function/ft_intversion.c \
 				personal_function/ft_itohex.c \
 				personal_funciton/ft_putptr.c \
@@ -89,20 +76,31 @@ OBJSB = $(BONUSF:.c=.o)
 
 OBJSP = $(PERSONAL_FUNC:.c=.o)
 
-all: bonus $(LIBFTPRINTF) $(NAME) $(GNL_OBJS) $(P_OBJS)
+all: bonus printf $(NAME) $(GNL_OBJS) $(P_OBJS)
 
 $(NAME): $(OBJS) $(BONUS_OBJS) $(OBJSP) $(GNL_OBJS) $(P_OBJS)
-	ar rcs $(NAME) *.o
+	ar rcs $(NAME) libftprintf/libftprintf.a *.o
+
+printf:
+	cd libftprintf && make
 
 $(GNL_OBJS):
 
 $(P_OBJS):
 
-clean:
+.PHONY: clean printfclean fclean printfFclean re
+
+clean: printfclean
 	rm -f *.o
 
-fclean: clean
+printfclean:
+	cd libftprintf && make clean
+
+fclean: clean printfFclean
 	rm -f $(NAME)
+
+printfFclean:
+	cd libftprintf && make fclean
 
 re: fclean all
 
