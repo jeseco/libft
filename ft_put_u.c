@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_put_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/26 12:01:27 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/08/14 07:51:50 by JEAN-SEBA        ###   ########.fr       */
+/*   Created: 2021/08/05 10:06:02 by JEAN-SEBA         #+#    #+#             */
+/*   Updated: 2021/10/27 18:40:57 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_put_u(va_list ap, int *pt_count)
 {
-	int		len;
+	unsigned int	u;
 
-	len = 0;
-	while (*s++)
-		len++;
-	return (len);
+	u = va_arg(ap, unsigned int);
+	if (u >= 10)
+	{
+		ft_putnbr(u / 10);
+		ft_putnbr(u % 10);
+	}
+	else
+	{
+		*pt_count += ft_put_c(u + '0');
+		return ;
+	}
+	*pt_count += ft_uintlen(u);
 }

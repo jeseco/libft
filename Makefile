@@ -60,52 +60,50 @@ FILES		= 	ft_memset.c \
 				ft_lstiter.c \
 				ft_lstmap.c \
 				get_next_line.c \
-				get_next_line_utils.c
+				get_next_line_utils.c \
+				ft_check_flag.c \
+				ft_intlen.c \
+				ft_printf.c \
+				ft_put_c.c \
+				ft_put_h.c \
+				ft_put_i.c \
+				ft_putnbr.c \
+				ft_put_p.c \
+				ft_put_percent.c \
+				ft_put_s.c \
+				ft_put_u.c \
 
 PERSONAL_FUNC = personal_function/ft_intversion.c \
 				personal_function/ft_itohex.c \
 				personal_funciton/ft_putptr.c \
 
-P_OBJS 	=	$(LIBFTPRINTF:.c=.o)
-
-GNL_OBJS = 	$(GNL:.c=.o) 
-
-OBJS 	= $(FILES:.c=.o)
+OBJS = $(FILES:.c=.o)
 
 OBJSB = $(BONUSF:.c=.o)
 
 OBJSP = $(PERSONAL_FUNC:.c=.o)
 
-all: bonus printf $(NAME) $(GNL_OBJS) $(P_OBJS)
+all: $(NAME) 
 
-$(NAME): $(OBJS) $(BONUS_OBJS) $(OBJSP) $(GNL_OBJS) $(P_OBJS)
-	ar rcs $(NAME) libftprintf/libftprintf.a *.o
-
-printf:
-	cd libftprintf && make
-
-$(GNL_OBJS):
+$(NAME): $(OBJS) $(BONUS_OBJS) $(OBJSP) $(P_OBJS)
+	ar rcs $(NAME) $(P_OBJS) *.o
+	ranlib $(NAME)
 
 $(P_OBJS):
+	cd libftprintf/
 
-.PHONY: clean printfclean fclean printfFclean re
+.PHONY: clean fclean re
 
-clean: printfclean
+clean: 
 	rm -f *.o
 
-printfclean:
-	cd libftprintf && make clean
-
-fclean: clean printfFclean
+fclean: clean 
 	rm -f $(NAME)
-
-printfFclean:
-	cd libftprintf && make fclean
 
 re: fclean all
 
 bonus: $(OBJSB) 
 
-$(OBJSB)
+$(OBJSB):
 
 $(OBJSP):
