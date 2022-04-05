@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:38:30 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2022/01/26 11:57:38 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/04/05 09:49:20 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,8 @@ unsigned int	make_hex(unsigned long long va, int *hex);
 size_t			ft_strlen(const char *s);
 
 void			ft_putnbr(int n);
+
+long			ft_atol(const char *str);
 
 // libftprintf: 
 unsigned int	make_hex(unsigned long long va, int *hex);

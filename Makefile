@@ -3,13 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+         #
+#    By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/26 10:27:53 by JEAN-SEBA         #+#    #+#              #
-#    Updated: 2022/01/26 10:56:57 by jcourtem         ###   ########.fr        #
-#    Updated: 2021/07/08 14:00:04 by JEAN-SEBA        ###   ########.fr        #
+#    Updated: 2022/04/05 09:48:50 by jcourtem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 CC			= 	gcc -Wextra -Wall -Werror -g -D BUFFER_SIZE=1 
 NAME		= 	libft.a
@@ -72,6 +72,7 @@ FILES		= 	ft_memset.c \
 				ft_put_percent.c \
 				ft_put_s.c \
 				ft_put_u.c \
+				ft_atol.c
 
 PERSONAL_FUNC = personal_function/ft_intversion.c \
 				personal_function/ft_itohex.c \
