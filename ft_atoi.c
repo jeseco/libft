@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 13:09:24 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/07/21 17:08:39 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2022/04/04 23:45:46 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 		i++;
 	while (str[i] != '\0' && ft_isdigit(str[i]))
 		nbr = (nbr * 10) + (str[i++] - '0');
-	if (isneg == 1)
+	if (isneg)
 		return (-nbr);
 	return (nbr);
 }
