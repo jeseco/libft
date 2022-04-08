@@ -6,7 +6,11 @@
 /*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:38:30 by JEAN-SEBA         #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/04/08 12:23:36 by jcourtem         ###   ########.fr       */
+=======
+/*   Updated: 2022/04/05 09:49:20 by jcourtem         ###   ########.fr       */
+>>>>>>> 8341d15ff3466bd51b1095c563b971a8c32e7908
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +151,8 @@ unsigned int	make_hex(unsigned long long va, int *hex);
 size_t			ft_strlen(const char *s);
 
 void			ft_putnbr(int n);
+
+long			ft_atol(const char *str);
 
 // libftprintf: 
 unsigned int	make_hex(unsigned long long va, int *hex);

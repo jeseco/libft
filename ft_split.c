@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 12:15:01 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/07/30 16:33:28 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2022/04/04 17:19:19 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ static unsigned int	ft_get_nb_strs(char const *s, char c)
 	unsigned int	i;
 	unsigned int	nb_strs;
 
-	if (!s[0])
+	if (!s)
 		return (0);
 	i = 0;
 	nb_strs = 0;
-	while (s[i] && s[i] == c)
+	while (s[i] == c)
 		i++;
 	while (s[i])
 	{

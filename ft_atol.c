@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcourtem <jcourtem@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 13:09:24 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2022/04/04 23:45:46 by jcourtem         ###   ########.fr       */
+/*   Created: 2022/04/05 09:47:34 by jcourtem          #+#    #+#             */
+/*   Updated: 2022/04/05 09:47:57 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	long	i;
 	long	nbr;
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 		i++;
 	while (str[i] != '\0' && ft_isdigit(str[i]))
 		nbr = (nbr * 10) + (str[i++] - '0');
-	if (isneg)
+	if (isneg == 1)
 		return (-nbr);
 	return (nbr);
 }
