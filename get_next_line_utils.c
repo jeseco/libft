@@ -6,7 +6,7 @@
 /*   By: jcourtem <jcourtem@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:42:15 by jcourtem          #+#    #+#             */
-/*   Updated: 2022/01/26 10:18:01 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/04/06 16:19:42 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ char	*gnl_strchr(char *s, char c)
 	return (NULL);
 }
 
-size_t  gnl_strlen(const char *s)
+size_t	gnl_strlen(const char *s)
 {
-        int             len;
+	int	len;
 
-        len = 0;
-		if (s)
-        	while (*s++)
-                len++;
-        return (len);
+	len = 0;
+	if (s)
+		while (*s++)
+			len++;
+	return (len);
 }
 
 void	gnl_memmove(char *dest, char *src, int len)

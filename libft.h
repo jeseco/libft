@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 11:38:30 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2022/01/26 11:57:38 by jcourtem         ###   ########.fr       */
+/*   Updated: 2022/04/08 12:23:36 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ size_t			ft_strlcpy(char *dest, const char *src, size_t dstsize);
 
 size_t			ft_strlcat(char *dest, const char *src, size_t dest_size);
 
-char			*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char			*ft_strnstr(const char *haystack, const char *needle, \
+		size_t len);
 
 int				ft_atoi(const char *str);
 
@@ -74,7 +75,7 @@ char			*ft_strdup(const char *s1);
 
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 
-char			*ft_strjoin(char	const *s1, char const *s2);
+char			*ft_strjoin(char *s1, char *s2);
 
 char			*ft_strtrim(char const *s1, char const *set);
 
@@ -112,7 +113,8 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), \
+		void (*del)(void *));
 
 void			ft_putchar_fd(char c, int fd);
 
@@ -162,6 +164,6 @@ int				ft_put_c(char c);
 int				ft_intlen(int x);
 int				ft_uintlen(unsigned int x);
 int				ft_put_percent(const char *str, int i, int *pt_count);
-int             ft_printf(const char *str, ...);
+int				ft_printf(const char *str, ...);
 
 #endif

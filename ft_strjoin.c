@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: JEAN-SEBA <jcourtem@student.42quebec>      +#+  +:+       +#+        */
+/*   By: jcourtem <jcourtem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 11:40:00 by JEAN-SEBA         #+#    #+#             */
-/*   Updated: 2021/06/03 13:18:42 by JEAN-SEBA        ###   ########.fr       */
+/*   Updated: 2022/04/08 12:37:05 by jcourtem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {	
 	size_t	s1_len;
 	size_t	s2_len;
@@ -36,5 +36,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_memmove(rtn, s1, s1_len);
 	ft_memmove(rtn + s1_len, s2, s2_len);
 	rtn[stot_len - 1] = '\0';
+	free (s1);
 	return (rtn);
 }
